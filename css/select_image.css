@@ -1,0 +1,167 @@
+* {
+  margin: 0px;
+	padding: 0px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	list-style: none;
+	font-family: Ubuntu, sans-serif, Arial;
+	-webkit-tap-highlight-color:transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+html, body, #wrap {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  background-color: rgba(255,255,255,0.7);
+  padding: 20px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  text-align: center;
+}
+
+header #upload {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 80px;
+  height: 100%;
+  border: 0;
+  background: url(../assets/upload.png) no-repeat black center center;
+  background-size: auto 60%;
+  display: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 800px){
+  header {
+     padding: 10px;
+  }
+  h1 {
+     font-size: 20px;
+     text-align: left;
+  }
+  header #upload {
+     width: 60px;
+  }
+}
+
+#wrap {
+  display: table;
+  z-index: 9000;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+#cont {
+  display: table-cell;
+  vertical-align: middle;  mostra_amaga();
+  text-align: center;
+  position: relative;
+}
+
+#wrap-upload {
+  padding: 50px;
+  display: table;
+  background-color: rgba(255,255,255,0.3);
+  margin: auto;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+  padding: 10px;
+  padding-left: 50px;
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  background: url(../assets/upload.png) black no-repeat 10px center;
+  background-size: auto 70%;
+  border-radius: 10px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: red;
+  box-shadow: 3px 3px #000;
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+	pointer-events: none;
+}
+
+h4 {
+  margin-top: 20px;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+#tuxs {
+  display: table;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#tuxs li {
+  display: table-cell;
+  width: 120px;
+  height: 120px;
+  background: no-repeat center center;
+  background-size: auto 80%;
+  border: 2px solid transparent;
+}
+
+#tuxs li:hover {
+  border: 2px solid red;
+  cursor: pointer;
+}
+
+#tuxs li#egypcian {
+  background-image: url(../assets/egypcian.png);
+}
+
+#tuxs li#judoka {
+  background-image: url(../assets/judoka.png);
+}
+
+#tuxs li#builder {
+  background-image: url(../assets/builder.png);
+}
+
+#credits {
+  background-color: rgba(255,255,255,0.5);
+  z-index: 9999;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  padding: 10px;
+}
+
+#credits a {
+  color: blue;
+}
