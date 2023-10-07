@@ -70,8 +70,10 @@
       <a-image src="assets/AR7.jpeg" position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-image>
     </a-marker>
 
-    <a-marker preset="custom" url="assets/pattern-MARKER8.patt" id='target'>
-      <a-image src="assets/AR8.mp3" position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-image>
+    <a-marker preset="custom" url="assets/pattern-MARKER8.patt" id='soundhandler'>    
+      <a-assets>
+        <audio id="sound" src="assets/AR8.mp3" preload="auto"></audio>
+    </a-assets>
     </a-marker>
 
     <a-marker preset="custom" url="assets/pattern-MARKER9.patt" id='target'>
@@ -81,8 +83,23 @@
     <a-marker preset="custom" url="assets/pattern-MARKER10.patt" id='target'>
       <a-image src="assets/AR10.jpeg" position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-image>
     </a-marker>
-
+    <a-entity sound="src: #sound" autoplay="false"></a-entity>
     <a-entity camera></a-entity>
   </a-scene>
+
+  <script>
+    AFRAME.registerComponent('soundhandler', {
+        tick: function () {
+               var entity = document.querySelector('[sound]');
+             if (document.querySelector('a-marker').object3D.visible == true) {
+                entity.components.sound.playSound();
+            } else {
+                entity.components.sound.pauseSound();
+            }
+    
+         }
+    });
+  </script>
+
 </body>
 </html>
