@@ -38,17 +38,13 @@
 
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' soundhandler>
     
-        <a-marker preset="custom" url="assets/pattern-MARKER1.patt">
-            <a-image src="assets/AR1.jpeg" position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-image>
-        </a-marker>
-
         <a-marker preset="hiro">
             <a-assets>
                 <audio id="sound" src="assets/AR8.mp3" preload="auto"></audio>
             </a-assets>
             <a-box position="0 0.5 0"></a-box>
         </a-marker>
-        <a-entity sound="src: #sound" autoplay="false"></a-entity>
+        <a-entity sound="src: #assets" autoplay="false"></a-entity>
         <a-entity camera></a-entity>
     </a-scene>
 </body>
