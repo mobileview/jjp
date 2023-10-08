@@ -10,28 +10,6 @@
   <title>AR.js | Custom pattern</title>
   <script src="js/aframe.min.0.6.1.js"></script>
   <script src="js/aframe-ar.js"></script>
-
-  <script>
-    AFRAME.registerComponent('soundhandler', {
-        init: function () {
-            this.soundEl = document.querySelector('[sound]');
-            this.marker = document.querySelector('a-marker');
-            this.visible = false;
-        },
-        tick: function () {
-
-            if (this.marker.object3D.visible && !this.visible) {
-                console.log("ding")
-                this.soundEl.components.sound.stopSound(); // stop if playing
-                this.soundEl.components.sound.playSound(); // play
-                this.visible = true; // make sure it plays only once per visible
-            } else if (!this.marker.object3D.visible) {
-                this.visible = false;
-            }
-        }
-    });
-  </script>
-
   <script>
     var tar;
     window.addEventListener("load", ini);
@@ -94,12 +72,6 @@
       <a-image src="assets/AR7.jpeg" position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-image>
     </a-marker>
 
-    <a-marker preset="hiro">
-      <a-assets>
-      <audio id="sound" src="assets/AR8.mp3" preload="auto"></audio>
-      </a-assets>
-    </a-marker>
-
     <a-marker preset="custom" url="assets/pattern-MARKER9.patt" id='target'>
       <a-image src="assets/AR9.jpeg" position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-image>
     </a-marker>
@@ -108,7 +80,6 @@
       <a-image src="assets/AR10.jpeg" position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-image>
     </a-marker>
 
-    <a-entity sound="src: #sound" autoplay="false"></a-entity>
     <a-entity camera></a-entity>
   </a-scene>
   
